@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function validation(){
+            try{
+
+            
+            // alert("hello");
+            // return false;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var confirm = document.getElementById("confirm").value;
+            var birthday = document.getElementById("birthday").value;
+            var email = document.getElementById("email").value;
+            var male = document.getElementById("male").checked;
+            var female = document.getElementById("female").checked;
+            var country = document.getElementById("country").value;
+            var city = document.getElementById("city").value;
+            var state = document.getElementById("state").value;
+            
+        username = username.trim();
+        password = password.trim();
+        confirm = confirm.trim();
+        birthday = birthday.trim();
+        email = email.trim();
+        city = city.trim();
+        state = state.trim();
+
+            if(!username || !password || !confirm || !birthday || !email || (!male &&
+             !female) || !country  || !city || !state ){
+                        if(!username && !password && !confirm && !birthday && !email && (!male &&
+             !female) && !country  && !city && !state ){
+                         alert("All fields are mandatory");
+                         return false;
+                        }
+                         if(!username ){
+                            alert("Please enter username");
+                              return false;
+                         }
+                         if(!password ){
+                            alert("Please enter password");
+                              return false;
+                         }
+                         if(!confirm ){
+                            alert("Please enter  confirm password");
+                              return false;
+                         }
+                         if(!birthday ){
+                            alert("Please enter birthday date");
+                              return false;
+                         }
+                         if(!email ){
+                            alert("Please enter email");
+                              return false;
+                         }
+                         if(!male &&!female){
+                            alert("Please select gender");
+                              return false;
+                         }
+                         if(!country){
+                            alert("Please enter country name");
+                              return false;
+                         }
+                         if(!state){
+                            alert("Please enter state name");
+                              return false;
+                         }
+                         if(!city){
+                            alert("Please enter city name");
+                              return false;
+                         }
+
+
+             }
+             
+             else{
+
+                if(password !== confirm){
+              alert("please fill same password");
+              return false;
+               
+            }
+            else{
+                alert("all good");
+                return true;
+ 
+            }
+             }
+
+        
+        }
+        catch(error){
+            alert(error);
+            return false;
+
+        }
+        
+    }
+    </script>
+    <div class="outer">
+
+        <div class="inner">
+
+            <h3>Create an account</h3>
+
+         <div> 
+             <label for="username" class="mlabel">Username*</label>
+             <input type="text" id="username" placeholder="Enter username" class="minput">
+         </div>
+
+          <div>
+             <label for="password" class="mlabel">Password*</label>
+             <input type="password" id="password" 
+             placeholder="Enter password" class="minput">
+         </div>
+
+         <div>
+            <label for="confirm" class="mlabel"> Confirm Password*</label>
+            <input type="password" id="confirm" placeholder="Enter confirm" 
+            class="minput">
+        </div>
+
+        <div>
+            <label for="birthday" class="mlabel"> Birthday date*</label>
+            <input type="date" id="birthday" placeholder="Enter birthday date"
+             class="minput">
+        </div>
+
+        <div>
+            <label for="email" class="mlabel"> Email*</label>
+            <input type="email" id="email" placeholder="Enter email" class="minput">
+        </div>
+
+         <div>
+            <label for="gender" class="mlabel">Gender*</label>
+
+                 <label for="male"class="minput">Male</label> 
+                 <input type="radio" id="male" name="gender">
+
+                <label for="female">Female</label>    
+                <input type="radio" id="female" name="gender">
+        </div>
+
+        <div>
+            <label for="country" class="mlabel">Country*</label>
+            <select id="country" class="minput">
+                <option>India</option>
+                <option>America</option>
+                <option>England</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="State" class="mlabel">State/Provience</label>
+            <input type="text" id="state" placeholder="Enter provience" class="minput">
+        </div>
+
+        <div>
+            <label for="city" class="mlabel"> City*</label>
+            <input type="text" id="city" placeholder="Enter City name"class="minput">
+        </div>
+
+<div class="divbutton">
+        <button id="button" class="vbutton" onclick=" return validation()">sign up</button>
+</div>
+
+        </div>
+    </div>
+</body>
+</html>
